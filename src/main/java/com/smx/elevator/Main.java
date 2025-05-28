@@ -8,9 +8,9 @@ import com.smx.elevator.bean.Elevator;
  */
 public class Main {
 
-	// seed with the sample values
-	private int[] travelPlan = new int[] { 2, 9, 1, 32 };
-	private int initialFloor = 12;
+	// Default values is the elevator is on the first floor and has not moved
+	private int[] travelPlan = new int[0];
+	private int initialFloor = 1;
 
 	public static void main(String[] args) {
 		Main main = new Main();

@@ -33,9 +33,9 @@ class MainTest {
 
 	@Test
 	void testMainNullArgs() {
-		// This is the sample
+		// By default it is on the first floor and doesn't move
 		Main.main(null);
-		assertEquals("560 12,2,9,1,32", outputStreamCaptor.toString().trim());
+		assertEquals("0 1", outputStreamCaptor.toString().trim());
 	}
 
 	@Test
