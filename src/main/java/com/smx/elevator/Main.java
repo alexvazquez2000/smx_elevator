@@ -9,13 +9,20 @@ import com.smx.elevator.bean.Elevator;
 public class Main {
 
 	//seed with the sample values
-	private static int[] travelPlan = new int[] {2,9,1,32};
-	private static int initialFloor = 12;
+	private int[] travelPlan = new int[] {2,9,1,32};
+	private int initialFloor = 12;
 	
 	
 	public static void main(String[] args) {
-		processTheArguments(args);
-		
+		Main main = new Main();
+		main.processTheArguments(args);
+		main.executeTravelPlan();
+	}
+
+	/**
+	 * moves the elevator and produces the output
+	 */
+	private void executeTravelPlan() {
 		//-------------------------------------------------
 		//Start moving the elevator 
 		Elevator elevator = new Elevator(initialFloor);
@@ -26,7 +33,11 @@ public class Main {
 	}
 
 
-	private static void processTheArguments(String[] args) {
+	private void processTheArguments(String[] args) {
+		if (args == null) {
+			//use the default values
+			return;
+		}
 		//override the seed values if there are arguments
 		for (String arg : args) {
 			//the expected input is of the following format:   start=12 floor=2,9,1,32

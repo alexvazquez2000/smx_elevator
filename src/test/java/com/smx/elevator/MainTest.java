@@ -33,6 +33,13 @@ class MainTest {
 	}
 
 	@Test
+	void testMainNullArgs() {
+		//This is the sample
+		Main.main(null);
+		assertEquals("560 12,2,9,1,32", outputStreamCaptor.toString().trim());
+	}
+
+	@Test
 	void testMainBadStartFloor() {
 		//This is the sample
 		Main.main(new String[]{ "floor=2,9,1,32", "start=A"});
