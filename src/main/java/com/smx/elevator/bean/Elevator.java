@@ -46,4 +46,11 @@ public class Elevator {
 		currentFloor = goToFloor;
 	}
 
+	/**
+	 * @return the traveled time and the floors visited in the expected format
+	 */
+	public String getStatus() {
+		return getTravelTime() + " " + getFloorsVisitedAsString();
+	}
+
 }

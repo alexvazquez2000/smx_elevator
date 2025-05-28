@@ -22,7 +22,7 @@ public class Main {
 		for (int x = 0; x < travelPlan.length; x++) {
 			elevator.moveElevatorToFloor(travelPlan[x]);
 		}
-		System.out.println(elevator.getTravelTime() + " " + elevator.getFloorsVisitedAsString());
+		System.out.println(elevator.getStatus());
 	}
 
 
