@@ -8,11 +8,10 @@ import com.smx.elevator.bean.Elevator;
  */
 public class Main {
 
-	//seed with the sample values
-	private int[] travelPlan = new int[] {2,9,1,32};
+	// seed with the sample values
+	private int[] travelPlan = new int[] { 2, 9, 1, 32 };
 	private int initialFloor = 12;
-	
-	
+
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.processTheArguments(args);
@@ -23,8 +22,8 @@ public class Main {
 	 * moves the elevator and produces the output
 	 */
 	private void executeTravelPlan() {
-		//-------------------------------------------------
-		//Start moving the elevator 
+		// -------------------------------------------------
+		// Start moving the elevator
 		Elevator elevator = new Elevator(initialFloor);
 		for (int x = 0; x < travelPlan.length; x++) {
 			elevator.moveElevatorToFloor(travelPlan[x]);
@@ -32,19 +31,18 @@ public class Main {
 		System.out.println(elevator.getStatus());
 	}
 
-
 	private void processTheArguments(String[] args) {
 		if (args == null) {
-			//use the default values
+			// use the default values
 			return;
 		}
-		//override the seed values if there are arguments
+		// override the seed values if there are arguments
 		for (String arg : args) {
-			//the expected input is of the following format:   start=12 floor=2,9,1,32
+			// the expected input is of the following format: start=12 floor=2,9,1,32
 			if (arg.startsWith("start=")) {
 				try {
 					initialFloor = Integer.valueOf(arg.substring(arg.indexOf("=") + 1));
-				} catch (NumberFormatException e ) {
+				} catch (NumberFormatException e) {
 					initialFloor = 1;
 				}
 			}
@@ -52,16 +50,15 @@ public class Main {
 				String[] floors = arg.substring(arg.indexOf("=") + 1).split(",");
 				try {
 					travelPlan = new int[floors.length];
-					for (int f = 0; f< floors.length; f++) {
+					for (int f = 0; f < floors.length; f++) {
 						travelPlan[f] = Integer.valueOf(floors[f]);
 					}
-				} catch (NumberFormatException e ) {
+				} catch (NumberFormatException e) {
 					travelPlan = new int[0];
 				}
 			}
 		}
-		
-	}
 
+	}
 
 }
