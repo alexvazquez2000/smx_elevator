@@ -27,4 +27,19 @@ If there is no parameter for the initial floor then it will be initialized to fl
 
 If there is no parameters for the "floor" travel plan, then it is initialized to floors=2,9,1,32.    A more generic solution would have it initialized to an empty array, but this made it easier to test.   If there is a problem with the parameter then it is initialize to an empty array.
 
-If a floor is duplicated then it will be shown only once on the output.  ie: floor=12,12,14 will output: 2 12,14
+If a floor is duplicated then it will be shown only once on the output.  ie: floor=12,12,14 will output: 2 12,14  
+
+There is no GUI, output is sent to the console.
+
+There is no need for a logger.
+
+# Test
+
+The JUnit provide 100% test coverage.
+
+# Excecute from command line
+
+This assumes the code has already been compiled with: mvn compile
+
+	cd /c/Users/alexv/workspace/smx_elevator  (or wherever the code is cloned)
+	java -cp target/classes/ com.smx.elevator.Main floor=10,11,12 start=10
